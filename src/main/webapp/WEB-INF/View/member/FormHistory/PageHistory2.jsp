@@ -1,8 +1,8 @@
 <%@page import="com.test.Bean.SaveTable1Bean"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<form action="gotopage3">
-	<div
+<form action="gotopage3" name="gotopage3" OnSubmit="return fncSubmit3();">
+	<div 
 		class="form-section form-position w3-modal-content w3-card w3-animate-bottom">
 		<h2 class="fs-title">1. ข้อมูลส่วนบุคคล</h2>
 		<div class="row">
@@ -13,7 +13,7 @@
 					<div
 						class="select select-center paddingTop-1 select-prefix select-diasbled">
 						<select
-							class="fontSize-s fontFamily-thonburi ng-pristine ng-untouched ng-valid ng-not-empty"
+							class="fontSize-s fontFamily-thonburi  form-control"
 							name="prefix">
 							<option value="">โปรดเลือก</option>
 							<option value="1">นาย</option>
@@ -54,10 +54,10 @@
 					<label>วันเกิด</label><span class="require-red">*</span>
 					<div class="row" style="margin: 0px 0px;">
 						<div
-							class="col-xs-3 col-sm-3 select select-center paddingTop-1 select-diasbled"
+							class="col-xs-3 col-sm-3 select select-center paddingTop-1 "
 							style="margin-right: 2.5%;">
 							<select
-								class="fontSize-s fontFamily-thonburi ng-pristine ng-untouched ng-valid ng-not-empty"
+								class="fontSize-s fontFamily-thonburi form-control"
 								name="birthDay">
 								<option value="">วัน</option>
 								<option value="01">01</option>
@@ -97,7 +97,7 @@
 							class="col-xs-5 select select-center paddingTop-1 select-diasbled"
 							style="width: 45%; margin-right: 2.5%;">
 							<select
-								class="fontSize-s fontFamily-thonburi ng-pristine ng-untouched ng-valid ng-not-empty"
+								class="fontSize-s fontFamily-thonburi form-control"
 								name="birthMonth">
 								<option value="">เดือน</option>
 								<option value="01">มกราคม</option>
@@ -115,9 +115,9 @@
 							</select>
 						</div>
 						<div
-							class="col-xs-3 col-sm-3 select select-center paddingTop-1 select-diasbled">
+							class="col-xs-3 col-sm-3 select select-center paddingTop-1 ">
 							<select
-								class="fontSize-s fontFamily-thonburi ng-pristine ng-untouched ng-valid ng-not-empty"
+								class="fontSize-s fontFamily-thonburi form-control"
 								name="birthYear"><option value="">ปี</option>
 								<option label="2541" value="2541">2541</option>
 								<option label="2540" value="2540">2540</option>
@@ -297,7 +297,7 @@
 						class="require-red">*</span>
 					<div class="select select-center paddingTop-1 select-diasbled">
 						<select
-							class="fontSize-s fontFamily-thonburi ng-pristine ng-untouched ng-valid ng-not-empty"
+							class="fontSize-s fontFamily-thonburi form-control"
 							name="availableTime">
 							<option value="">โปรดเลือก</option>
 							<option value="8.00-10.00 น.">8.00-10.00 น.</option>
@@ -326,7 +326,7 @@
 						<label>อาชีพปัจจุบัน</label><span class="require-red">*</span>
 						<div class="select select-center paddingTop-1 select-diasbled">
 							<select
-								class="fontSize-s fontFamily-thonburi ng-pristine ng-untouched ng-valid ng-not-empty"
+								class="fontSize-s fontFamily-thonburi form-control"
 								name="job">
 								<option value="">โปรดเลือก</option>
 								<option value="0">ว่างงาน</option>
@@ -366,10 +366,10 @@
 						</div>
 
 					</div>
-					<!-- end ngIf: uInfo.job!=0 && ((uInfo.job>=1 && uInfo.job<=12) || (uInfo.job>=17 && uInfo.job<=19)) -->
+				
 				</div>
 			</div>
-			<!-- ngIf: uInfo.job!=0 && ((uInfo.job>=1 && uInfo.job<=12) || (uInfo.job>=17 && uInfo.job<=19)) -->
+			
 			<div class="row padding-job ng-scope">
 				<div
 					class="col-md-5 col-md-offset-1 col-sm-5 col-xs-12 col-sm-offset-1">
@@ -384,7 +384,7 @@
 								class="col-xs-6 select select-center paddingTop-1 select-diasbled"
 								style="width: 48.75%; margin-right: 2.5%;">
 								<select
-									class="fontSize-s fontFamily-thonburi ng-pristine ng-untouched ng-valid ng-not-empty"
+									class="fontSize-s fontFamily-thonburi form-control"
 									name="yearOfService">
 									<option value="">ปี</option>
 									<option value="0">0 ปี</option>
@@ -429,7 +429,7 @@
 								class="col-xs-6 select select-center paddingTop-1 select-diasbled"
 								style="width: 48.75%;">
 								<select
-									class="fontSize-s fontFamily-thonburi ng-pristine ng-untouched ng-valid ng-not-empty"
+									class="fontSize-s fontFamily-thonburi form-control"
 									name="monthOfService">
 									<option value="">เดือน</option>
 									<option value="0">0 เดือน</option>
@@ -500,8 +500,80 @@
 		</div>
 		
 	</div>
-			
-		
-	
 	
 </form>
+<script type="text/javascript">
+	function fncSubmit3() {
+		if (document.gotopage3.prefix.value == "") {
+			alert('กรุณา เลือกคำนำหน้าด้วยครับ');
+			document.gotopage3.prefix.focus();
+			return false;
+		}
+		if (document.gotopage3.fNameTH.value == "") {
+			alert('กรุณา ใส่ชื่อ ');
+			document.gotopage3.fNameTH.focus();
+			return false;
+		}
+		if (document.gotopage3.lNameTH.value == "") {
+			alert('กรุณา ใส่นามกสุล  ');
+			document.gotopage3.lNameTH.focus();
+			return false;
+		}
+		if (document.gotopage3.birthDay.value == "") {
+			alert('กรุณา ใส่วันเกิด  ');
+			document.gotopage3.birthDay.focus();
+			return false;
+		}
+		if (document.gotopage3.birthMonth.value == "") {
+			alert('กรุณา ใส่เดือนเกิด ');
+			document.gotopage3.birthMonth.focus();
+			return false;
+		}
+		if (document.gotopage3.birthYear.value == "") {
+			alert('กรุณา ใส่ปีเกิด ');
+			document.gotopage3.birthYear.focus();
+			return false;
+		}
+		if (document.gotopage3.refID.value == "") {
+			alert('กรุณา ใส่เลขประชาชน');
+			document.gotopage3.refID.focus();
+			return false;
+		}
+		if (document.gotopage3.mobilePhone.value == "") {
+			alert('กรุณา ใส่เบอร์โทร');
+			document.gotopage3.mobilePhone.focus();
+			return false;
+		}
+		if (document.gotopage3.email.value == "") {
+			alert('กรุณา ใส่อีเมลล์');
+			document.gotopage3.email.focus();
+			return false;
+		}
+		if (document.gotopage3.availableTime.value == "") {
+			alert('กรุณา ใส่เวลาที่ติดต่อได้');
+			document.gotopage3.availableTime.focus();
+			return false;
+		}
+		if (document.gotopage3.job.value == "") {
+			alert('กรุณา ใส่อาชีพ');
+			document.gotopage3.job.focus();
+			return false;
+		}
+		if (document.gotopage3.salary.value == "") {
+			alert('กรุณา ใส่เงินเดือน');
+			document.gotopage3.salary.focus();
+			return false;
+		}
+		if (document.gotopage3.yearOfService.value == "") {
+			alert('กรุณา ใส่ปีที่ทำงาน');
+			document.gotopage3.yearOfService.focus();
+			return false;
+		}
+		if (document.gotopage3.monthOfService.value == "") {
+			alert('กรุณา ใส่เดือนที่ทำงาน');
+			document.gotopage3.monthOfService.focus();
+			return false;
+		}
+	}
+	minlength
+</script>
