@@ -2,10 +2,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 
-<form>
+
 	<div
-		class=" w3-modal-content w3-card w3-animate-bottom form-section form-position form-coborrower">
-		<h1 align="center">ผู้กู้ร่วม คนที่ 1</h1>
+		class=" w3-modal-content w3-animate-bottom form-section form-position form-coborrower">
+		<h1 align="center">ผู้กู้ร่วม</h1>
 		<h2 class="fs-title">1. ข้อมูลส่วนบุคคล</h2>
 		<div class="row">
 
@@ -16,8 +16,8 @@
 					<div
 						class="select select-center paddingTop-1 select-prefix select-diasbled">
 						<select
-							class="fontFamily-thonburi fontSize-s ng-pristine ng-untouched ng-valid ng-not-empty"
-							name="prefix[1]">
+							class="fontFamily-thonburi fontSize-s form-control"
+							name="prefix2">
 							<option value="">โปรดเลือก</option>
 							<option value="1">นาย</option>
 							<option value="2">นางสาว</option>
@@ -29,14 +29,14 @@
 			<div class="col-md-4 col-sm-4 col-xs-12">
 				<div class="form-group margin-3-col-name">
 					<label>ชื่อ</label><span class="require-red">*</span> <input
-						type="text" class="form-control ">
+						type="text" class="form-control " name="fname2" id="fname2">
 
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-4 col-xs-12">
 				<div class="form-group">
 					<label>นามสกุล</label><span class="require-red">*</span> <input
-						type="text" class="form-control ">
+						type="text" class="form-control " name="lname2" id="lname2">
 				</div>
 			</div>
 		</div>
@@ -50,8 +50,8 @@
 							class="col-xs-3 col-sm-3 select select-center paddingTop-1 select-diasbled"
 							style="margin-right: 2.5%;">
 							<select
-								class="fontFamily-thonburi fontSize-s ng-pristine ng-untouched ng-valid ng-not-empty"
-								name="birthDay[1]">
+								class="fontFamily-thonburi fontSize-s form-control"
+								name="birthDay2">
 								<option value="">วัน</option>
 								<option value="01">01</option>
 								<option value="02">02</option>
@@ -90,8 +90,8 @@
 							class="col-xs-5 select select-center paddingTop-1 select-diasbled"
 							style="width: 45%; margin-right: 2.5%;">
 							<select
-								class="fontFamily-thonburi fontSize-s ng-pristine ng-untouched ng-valid ng-not-empty"
-								name="birthMonth[1]">
+								class="fontFamily-thonburi fontSize-s form-control"
+								name="birthMonth2">
 								<option value="">เดือน</option>
 								<option value="01">มกราคม</option>
 								<option value="02">กุมภาพันธ์</option>
@@ -110,8 +110,8 @@
 						<div
 							class="col-xs-3 col-sm-3 select select-center paddingTop-1 select-diasbled">
 							<select
-								class="fontFamily-thonburi fontSize-s ng-pristine ng-untouched ng-valid ng-not-empty"
-								name="birthYear[1]"><option
+								class="fontFamily-thonburi fontSize-s form-control"
+								name="birthYear2"><option
 									value="">ปี</option>
 								<option label="2541" value="2541">2541</option>
 								<option label="2540" value="2540">2540</option>
@@ -123,7 +123,7 @@
 								<option label="2534" value="2534">2534</option>
 								<option label="2533" value="2533">2533</option>
 								<option label="2532" value="2532">2532</option>
-								<option label="2531" value="2531" selected="selected">2531</option>
+								<option label="2531" value="2531" >2531</option>
 								<option label="2530" value="2530">2530</option>
 								<option label="2529" value="2529">2529</option>
 								<option label="2528" value="2528">2528</option>
@@ -241,7 +241,7 @@
 			<div class="col-md-5 col-sm-5 col-xs-12">
 				<div class="form-group">
 					<label>เบอร์มือถือ</label><span class="require-red">*</span> <input
-						type="text" class="form-control ">
+						type="text" class="form-control " name="talaphone2" maxlength="10">
 
 				</div>
 			</div>
@@ -252,7 +252,7 @@
 				<div class="form-group">
 					<div class="form-group">
 						<label>อีเมลติดต่อ</label><span class="require-red">*</span> <input
-							type="text" class="form-control ">
+							type="email" class="form-control " name ="email2">
 
 					</div>
 				</div>
@@ -267,8 +267,8 @@
 					<label>อาชีพปัจจุบัน</label><span class="require-red">*</span>
 					<div class="select select-center paddingTop-1 select-diasbled">
 						<select
-							class="fontFamily-thonburi fontSize-s ng-pristine ng-untouched ng-valid ng-not-empty"
-							name="job[1]">
+							class="fontFamily-thonburi fontSize-s form-control"
+							name="job2">
 							<option value="">โปรดเลือก</option>
 							<option value="0">ว่างงาน</option>
 							<option value="1">ข้าราชการ</option>
@@ -298,7 +298,7 @@
 			<div class="col-md-5 col-sm-5 col-xs-12 ng-scope">
 				<div class="form-group">
 					<label>รายได้ต่อเดือน</label><span class="require-red">*</span> <input
-						type="text" class="form-control ">
+						type="text" class="form-control " name="salary2" id="salary2">
 				</div>
 			</div>
 			<!-- end ngIf: uInfo.job!=0 -->
@@ -316,8 +316,8 @@
 							class="col-xs-6 select select-center paddingTop-1 select-diasbled"
 							style="width: 48.75%; margin-right: 2.5%;">
 							<select
-								class="fontFamily-thonburi fontSize-s ng-pristine ng-untouched ng-valid ng-not-empty"
-								name="yearOfService[1]">
+								class="fontFamily-thonburi fontSize-s form-control"
+								name="yearOfService2">
 								<option value="">โปรดเลือก</option>
 								<option value="0">0 ปี</option>
 								<option value="1">1 ปี</option>
@@ -361,8 +361,8 @@
 							class="col-xs-6 select select-center paddingTop-1 select-diasbled"
 							style="width: 48.75%;">
 							<select
-								class="fontFamily-thonburi fontSize-s ng-pristine ng-untouched ng-valid ng-not-empty"
-								name="monthOfService[1]">
+								class="fontFamily-thonburi fontSize-s  form-control"
+								name="monthOfService2">
 								<option value="">โปรดเลือก</option>
 								<option value="0">0 เดือน</option>
 								<option value="1">1 เดือน</option>
@@ -385,14 +385,7 @@
 				<!-- ngIf: uInfo.job==8 -->
 			</div>
 		</div>
-		<div class="row">
-						<div class="col-md-12 ">
-				<input  type="submit" value="หน้าต่อไป"
-					class="btn btn-success btn-lg btn-block" >
-				
-			</div>
-						</div>
+	
 		<!-- end ngIf: uInfo.job!=0 -->
 	</div>
 
-</form>
